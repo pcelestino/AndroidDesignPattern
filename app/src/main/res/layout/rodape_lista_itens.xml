@@ -67,7 +67,7 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/ikcp_titulo"
+        android:id="@+id/ikcv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -77,7 +77,7 @@
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/ikcp_valor"
+        android:id="@+id/ikcv_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iss_valor"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ikcp_titulo"
+        android:layout_below="@+id/ikcv_titulo"
         android:text="@string/icpp"
         android:textColor="@android:color/white" />
 
@@ -105,7 +105,7 @@
         android:id="@+id/icpp_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ikcp_valor"
+        android:layout_below="@+id/ikcv_valor"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/icms_titulo"

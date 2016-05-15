@@ -26,6 +26,8 @@ import java.util.Locale;
 import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeDesconto;
 import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeImposto;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIcms;
+import br.edu.ffb.androiddesignpattern.classes.ImpostoIcpp;
+import br.edu.ffb.androiddesignpattern.classes.ImpostoIkcv;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIss;
 import br.edu.ffb.androiddesignpattern.classes.Item;
 import br.edu.ffb.androiddesignpattern.classes.Orcamento;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fbAdicionaItem = (FloatingActionButton) findViewById(R.id.fb_adiciona_item);
         final TextView tvIcmsValor = (TextView) findViewById(R.id.icms_valor);
         final TextView tvIssValor = (TextView) findViewById(R.id.iss_valor);
+        final TextView tvIkcvValor = (TextView) findViewById(R.id.ikcv_valor);
+        final TextView tvIcppValor = (TextView) findViewById(R.id.icpp_valor);
         final TextView tvDescontoValor = (TextView) findViewById(R.id.desconto_valor);
         final TextView tvValorFinal = (TextView) findViewById(R.id.valor_final);
 
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         if (fbAdicionaItem == null) return;
         if (tvIcmsValor == null) return;
         if (tvIssValor == null) return;
+        if (tvIkcvValor == null) return;
+        if (tvIcppValor == null) return;
         if (tvDescontoValor == null) return;
         if (tvValorFinal == null) return;
 
@@ -115,15 +121,21 @@ public class MainActivity extends AppCompatActivity {
 
                                 double icms = calculadoraDeImposto.RealizaCalculo(orcamento, new ImpostoIcms());
                                 double iss = calculadoraDeImposto.RealizaCalculo(orcamento, new ImpostoIss());
+                                double ikcv = calculadoraDeImposto.RealizaCalculo(orcamento, new ImpostoIkcv());
+                                double icpp = calculadoraDeImposto.RealizaCalculo(orcamento, new ImpostoIcpp());
                                 double desconto = calculadoraDeDesconto.Calcula(orcamento);
 
                                 String strIcmsValor = String.format(localePtBr, "R$ %.2f", icms);
                                 String strIssValor = String.format(localePtBr, "R$ %.2f", iss);
+                                String strIkcvValor = String.format(localePtBr, "R$ %.2f", ikcv);
+                                String strIcppValor = String.format(localePtBr, "R$ %.2f", icpp);
 
                                 tvIcmsValor.setText(strIcmsValor);
                                 tvIssValor.setText(strIssValor);
+                                tvIkcvValor.setText(strIkcvValor);
+                                tvIcppValor.setText(strIcppValor);
                                 tvDescontoValor.setText(String.format(localePtBr, "R$ %.2f", desconto));
-                                tvValorFinal.setText(String.format(localePtBr, "R$ %.2f", (orcamento.getValor() + icms + iss) - desconto));
+                                tvValorFinal.setText(String.format(localePtBr, "R$ %.2f", (orcamento.getValor() + icms + iss + ikcv + icpp) - desconto));
 
                                 // esconde o teclado
                                 imm.toggleSoftInput(0, 0);
