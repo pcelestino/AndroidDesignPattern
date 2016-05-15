@@ -21,7 +21,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +28,8 @@ import java.util.Locale;
 
 import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeDesconto;
 import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeImposto;
+import br.edu.ffb.androiddesignpattern.classes.EnviadorDeEmail;
+import br.edu.ffb.androiddesignpattern.classes.EnviadorDeSms;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIcms;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIcpp;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIkcv;
@@ -37,6 +38,7 @@ import br.edu.ffb.androiddesignpattern.classes.Item;
 import br.edu.ffb.androiddesignpattern.classes.NotaFiscal;
 import br.edu.ffb.androiddesignpattern.classes.NotaFiscalBuilder;
 import br.edu.ffb.androiddesignpattern.classes.Orcamento;
+import br.edu.ffb.androiddesignpattern.classes.SalvaNoBanco;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -231,7 +233,12 @@ public class PrincipalActivity extends AppCompatActivity {
                                         .ComImposto(mIcpp)
                                         .ComDesconto(mDesconto)
                                         .NaDataAtual()
-                                        .Constroi();
+                                        // **** Padrão Observer (Registrando Eventos)****
+                                        .AdicionaAcao(new EnviadorDeEmail())
+                                        .AdicionaAcao(new EnviadorDeSms())
+                                        .AdicionaAcao(new SalvaNoBanco())
+                                        // **********************************************
+                                        .Constroi(PrincipalActivity.this);
 
                                 Intent irParaNotaFiscal = new Intent(PrincipalActivity.this, NotaFiscalActivity.class);
                                 irParaNotaFiscal.putExtra(NotaFiscal.NAME, notaFiscal);
@@ -259,8 +266,7 @@ public class PrincipalActivity extends AppCompatActivity {
         }
     }
 
-    private String ValorFormatado(double valor)
-    {
+    private String ValorFormatado(double valor) {
         return String.format(mLocalePtBr, "R$ %.2f", valor);
     }
 }

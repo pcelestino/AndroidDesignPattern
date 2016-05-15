@@ -8,8 +8,7 @@ import br.edu.ffb.androiddesignpattern.classes.Orcamento;
  */
 public abstract class TemplateDeImpostoCondicional implements IImposto {
 
-    public double Calcula(Orcamento orcamento)
-    {
+    public double Calcula(Orcamento orcamento) {
         return DeveUsarMaximaTaxacao(orcamento) ? MaximaTaxacao(orcamento) : MinimaTaxacao(orcamento);
     }
 

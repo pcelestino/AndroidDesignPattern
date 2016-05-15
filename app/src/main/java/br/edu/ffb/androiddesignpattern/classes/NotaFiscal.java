@@ -63,8 +63,7 @@ public class NotaFiscal implements Parcelable {
         return mItensDaNota;
     }
 
-    public double getValorTotal()
-    {
+    public double getValorTotal() {
         return mValorBruto + mImpostos - mDescontos;
     }
 
