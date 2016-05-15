@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidDesignPattern</string>
+    <string name="budget">Orçamento</string>
+    <string name="calculate">Calcular</string>
 </resources>
