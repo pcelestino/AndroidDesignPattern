@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">AndroidDesignPattern</string>
+    <string name="app_name">Compras</string>
     <string name="budget">Orçamento</string>
     <string name="calculate">Calcular</string>
+    <string name="item">Item</string>
+    <string name="value">Valor</string>
+    <string name="zero_value">R$ 0.00</string>
+    <string name="taxes">Impostos:</string>
+    <string name="icms">ICMS:</string>
+    <string name="iss">ISS:</string>
+    <string name="ikcp">IKCP:</string>
+    <string name="icpp">ICPP:</string>
+    <string name="final_value">Valor Final:</string>
+    <string name="discount">Desconto:</string>
 </resources>

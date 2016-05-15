@@ -7,8 +7,7 @@ import br.edu.ffb.androiddesignpattern.Interfaces.IImposto;
  */
 public class CalculadoraDeImposto {
 
-    public double RealizaCalculo(Orcamento orcamento, IImposto imposto)
-    {
+    public double RealizaCalculo(Orcamento orcamento, IImposto imposto) {
         return imposto.Calcula(orcamento);
     }
 }

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/imposto_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_toLeftOf="@+id/valor_final_titulo"
+        android:layout_toStartOf="@+id/valor_final_titulo"
+        android:text="@string/taxes"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/icms_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imposto_titulo"
+        android:text="@string/icms"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/icms_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imposto_titulo"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/icms_titulo"
+        android:layout_toLeftOf="@+id/valor_final_titulo"
+        android:layout_toRightOf="@+id/icms_titulo"
+        android:layout_toStartOf="@+id/valor_final_titulo"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/iss_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/icms_titulo"
+        android:text="@string/iss"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/iss_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icms_valor"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/icms_titulo"
+        android:layout_toLeftOf="@+id/valor_final_titulo"
+        android:layout_toRightOf="@+id/icms_titulo"
+        android:layout_toStartOf="@+id/valor_final_titulo"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/ikcp_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iss_titulo"
+        android:text="@string/ikcp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/ikcp_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iss_valor"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/icms_titulo"
+        android:layout_toLeftOf="@+id/valor_final_titulo"
+        android:layout_toRightOf="@+id/icms_titulo"
+        android:layout_toStartOf="@+id/valor_final_titulo"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/icpp_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ikcp_titulo"
+        android:text="@string/icpp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/icpp_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ikcp_valor"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/icms_titulo"
+        android:layout_toLeftOf="@+id/valor_final_titulo"
+        android:layout_toRightOf="@+id/icms_titulo"
+        android:layout_toStartOf="@+id/valor_final_titulo"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/desconto_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/imposto_titulo"
+        android:layout_toRightOf="@+id/imposto_titulo"
+        android:text="@string/discount"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/desconto_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/desconto_titulo"
+        android:layout_toEndOf="@+id/icms_valor"
+        android:layout_toRightOf="@+id/icms_valor"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/valor_final_titulo"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/desconto_valor"
+        android:text="@string/final_value"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/valor_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/valor_final_titulo"
+        android:layout_toEndOf="@+id/icms_valor"
+        android:layout_toRightOf="@+id/icms_valor"
+        android:text="@string/zero_value"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>
