@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="br.edu.ffb.androiddesignpattern.MainActivity">
+    tools:context=".PrincipalActivity">
 
     <ListView
         android:id="@+id/lv_itens"

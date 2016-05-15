@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/notaFiscalBackground"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.edu.ffb.androiddesignpattern.NotaFiscalActivity">
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_razao_social_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/invoice_company_name" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_razao_social_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/tv_nota_fiscal_razao_social_titulo"
+        android:layout_toRightOf="@id/tv_nota_fiscal_razao_social_titulo" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_cnpj_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nota_fiscal_razao_social_titulo"
+        android:layout_marginTop="5dp"
+        android:text="@string/invoice_cnpj" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_cnpj_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nota_fiscal_razao_social_titulo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/tv_nota_fiscal_cnpj_titulo"
+        android:layout_toRightOf="@+id/tv_nota_fiscal_cnpj_titulo" />
+
+
+    <View
+        android:id="@+id/iv_nota_fiscal_separador_intro"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tv_nota_fiscal_cnpj_titulo"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/dotted" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_data_atual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_nota_fiscal_separador_intro" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nota_fiscal_data_atual"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/invoice"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_item_label_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nota_fiscal_titulo"
+        android:layout_marginTop="5dp"
+        android:text="@string/name"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_item_label_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_nota_fiscal_titulo"
+        android:layout_marginTop="5dp"
+        android:text="@string/value"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/iv_nota_fiscal_separador_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tv_nota_fiscal_item_label_nome"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/dotted" />
+
+    <ListView
+        android:id="@+id/lv_nota_fiscal_lista_itens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_total_impostos_titulo"
+        android:layout_below="@id/iv_nota_fiscal_separador_titulo"
+        android:layout_marginBottom="5dp"
+        android:divider="@null" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_total_impostos_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_total_descontos_titulo"
+        android:text="@string/taxes"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_total_impostos_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_total_descontos_titulo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_total_descontos_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_valor_total_titulo"
+        android:text="@string/discount"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_total_descontos_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_valor_total_titulo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_valor_total_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_observacoes_titulo"
+        android:text="@string/invoice_total" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_valor_total_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_observacoes_titulo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_observacoes_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_nota_fiscal_observacoes_valor"
+        android:layout_marginTop="5dp"
+        android:text="@string/invoice_comments" />
+
+    <TextView
+        android:id="@+id/tv_nota_fiscal_observacoes_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

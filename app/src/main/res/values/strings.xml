@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Compras</string>
+    <string name="app_name">DPES2</string>
+    <string name="shopping">Compras</string>
     <string name="budget">Orçamento</string>
     <string name="calculate">Calcular</string>
     <string name="item">Item</string>
@@ -12,4 +13,15 @@
     <string name="icpp">ICPP:</string>
     <string name="final_value">Valor Final:</string>
     <string name="discount">Desconto:</string>
+    <string name="invoice">Nota Fiscal</string>
+    <string name="add">Adicionar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="company_name">Razão Social</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="comments">Observações</string>
+    <string name="name">Nome</string>
+    <string name="invoice_company_name">RAZÃO SOCIAL:</string>
+    <string name="invoice_cnpj">CNPJ:</string>
+    <string name="invoice_comments">OBSEVAÇÕES:</string>
+    <string name="invoice_total">TOTAL:</string>
 </resources>
