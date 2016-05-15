@@ -3,8 +3,8 @@ Projeto simples de cadastro de vendas e emissão de nota fiscal, utilizando os p
 
 ### PADRÃO STRATEGY
 
-Interface - IImposto
-Classes - ImpostoIcms, ImpostoIss, CalculadoraDeImposto, Orcamento
+**Interface** - IImposto
+**Classes** - ImpostoIcms, ImpostoIss, CalculadorDeImpostos, Orcamento
 
 ICMS e ISS são estratégias de cálculo de Imposto
 Existe uma interface (Imposto), é implementado estratégias embaixo dessa interface (ImpostoIcms e ImpostoIss)
@@ -14,8 +14,8 @@ independente de um imposto específico que criado
 
 ### PADRÃO CHAIN OF RESPONSIBILITY
 
-Interface - IDesconto
-Classes - Orcamento, Item, DescontoPorMaisDeCincoItens, DescontoPorMaisDeQuinhentosReais, SemDesconto, CalculadoraDeDesconto
+**Interface** - IDesconto
+**Classes** - Orcamento, Item, DescontoPorMaisDeCincoItens, DescontoPorMaisDeQuinhentosReais, SemDesconto, CalculadorDeDescontos
 
 Existe uma sequência de algorítmos, porém nem todos deverão ser executados, 
 existe uma lógica para saber se eu devo executá-lo ou não e ao invés de colocar toda essa lógica em uma classe só
@@ -25,8 +25,8 @@ passando ou não a responsabilidade para a próxima classe
 
 ### PADRÃO TEMPLATE METHOD
 
-Classe Abstrata - TemplateDeImpostoCondicional
-Classes - ImpostoIkcv, ImpostoIcpp
+**Classe Abstrata** - TemplateDeImpostoCondicional
+**Classes** - ImpostoIkcv, ImpostoIcpp
 
 É criado uma classe abstrata (TemplateDeImpostoCondicional) com métodos abstratos 
 e um método que implementa a lógica de negócio das classes onde a lógica se repete (ImpostoIkcv, ImpostoIcpp)
@@ -34,7 +34,7 @@ e um método que implementa a lógica de negócio das classes onde a lógica se 
 
 ### PADRÃO BUILDER
 
-Classes - NotaFiscal, NotaFiscalBuilder
+**Classes** - NotaFiscal, NotaFiscalBuilder
 
 NotaFiscal é uma classe mais complexa de ser criada, com vários parametros, então essa complexidade
 é escondida em uma classe responsável por gerar NotasFiscais
@@ -42,8 +42,8 @@ NotaFiscal é uma classe mais complexa de ser criada, com vários parametros, en
 
 ### PADRÃO OBSERVER
 
-Interface - IAcaoAposGerarNota
-Classes - EnviadorDeEmail, EnviadorDeSms, SalvaNoBanco
+**Interface** - IAcaoAposGerarNota
+**Classes** - EnviadorDeEmail, EnviadorDeSms, SalvaNoBanco
 
 Motivação - Permite que objetos interessados sejam avisados da mudança de estado 
 ou outros eventos ocorrendo num outro objeto(Ao construir a NotaFiscal em NotaFiscalBuilder).

@@ -3,7 +3,7 @@ package br.edu.ffb.androiddesignpattern.classes;
 /**
  * Realiza o cálculo do desconto
  */
-public class CalculadoraDeDesconto {
+public class CalculadorDeDescontos {
 
     public double Calcula(Orcamento orcamento) {
         DescontoPorMaisDeCincoItens descontoPorMaisDeCincoItens = new DescontoPorMaisDeCincoItens();

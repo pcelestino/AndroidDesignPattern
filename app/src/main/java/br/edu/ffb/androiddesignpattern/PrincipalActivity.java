@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeDesconto;
-import br.edu.ffb.androiddesignpattern.classes.CalculadoraDeImposto;
+import br.edu.ffb.androiddesignpattern.classes.CalculadorDeDescontos;
+import br.edu.ffb.androiddesignpattern.classes.CalculadorDeImpostos;
 import br.edu.ffb.androiddesignpattern.classes.EnviadorDeEmail;
 import br.edu.ffb.androiddesignpattern.classes.EnviadorDeSms;
 import br.edu.ffb.androiddesignpattern.classes.ImpostoIcms;
@@ -58,8 +58,8 @@ public class PrincipalActivity extends AppCompatActivity {
         mLocalePtBr = new Locale("pt", "BR");
 
         mOrcamento = new Orcamento();
-        final CalculadoraDeImposto calculadoraDeImposto = new CalculadoraDeImposto();
-        final CalculadoraDeDesconto calculadoraDeDesconto = new CalculadoraDeDesconto();
+        final CalculadorDeImpostos calculadorDeImpostos = new CalculadorDeImpostos();
+        final CalculadorDeDescontos calculadorDeDescontos = new CalculadorDeDescontos();
 
         FloatingActionButton fbAdicionaItem = (FloatingActionButton) findViewById(R.id.fb_adiciona_item);
         final ListView lvItens = (ListView) findViewById(R.id.lv_itens);
@@ -136,11 +136,11 @@ public class PrincipalActivity extends AppCompatActivity {
 
                                 mOrcamento.adicionaItem(new Item(strNomeDoItem, valorDoItem));
 
-                                mIcms = calculadoraDeImposto.RealizaCalculo(mOrcamento, new ImpostoIcms());
-                                mIss = calculadoraDeImposto.RealizaCalculo(mOrcamento, new ImpostoIss());
-                                mIkcv = calculadoraDeImposto.RealizaCalculo(mOrcamento, new ImpostoIkcv());
-                                mIcpp = calculadoraDeImposto.RealizaCalculo(mOrcamento, new ImpostoIcpp());
-                                mDesconto = calculadoraDeDesconto.Calcula(mOrcamento);
+                                mIcms = calculadorDeImpostos.RealizaCalculo(mOrcamento, new ImpostoIcms());
+                                mIss = calculadorDeImpostos.RealizaCalculo(mOrcamento, new ImpostoIss());
+                                mIkcv = calculadorDeImpostos.RealizaCalculo(mOrcamento, new ImpostoIkcv());
+                                mIcpp = calculadorDeImpostos.RealizaCalculo(mOrcamento, new ImpostoIcpp());
+                                mDesconto = calculadorDeDescontos.Calcula(mOrcamento);
 
                                 String strIcmsValor = ValorFormatado(mIcms);
                                 String strIssValor = ValorFormatado(mIss);
